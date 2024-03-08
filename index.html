@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        font-size: 62.5%;
+      }
+      body {
+        height: 100vh;
+        display: grid;
+        place-items: center;
+        background-color: rgb(33, 32, 32);
+      }
+      .loader {
+        width: 20rem;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background-color: rgb(212, 226, 84);
+        position: relative;
+        animation: loader 2s linear infinite reverse;
+      }
+      .loader::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 85%;
+        aspect-ratio: 1;
+        border-radius: 50%;
+
+        background-color: rgb(238, 26, 26);
+        z-index: 1;
+      }
+      .loader::after {
+        content: "";
+        position: absolute;
+        top: -2.5rem;
+        left: 7rem;
+        width: 40%;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background-color: rgb(212, 226, 84);
+        z-index: 2;
+        box-shadow: 0 0 2rem rgb(212, 226, 84), 0 0 3rem rgb(212, 226, 84),
+          0 0 4rem rgb(212, 226, 84), 0 0 5rem rgb(212, 226, 84),
+          0 0 6rem rgb(212, 226, 84), 0 0 7rem rgb(212, 226, 84);
+      }
+      @keyframes loader {
+        100% {
+          rotate: 360deg;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="loader"></div>
+  </body>
+</html>
